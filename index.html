@@ -36,19 +36,19 @@
       </span>
       <div id="categoriesSection">
         <categories categorieschildren="sharedData.RecentlySelectedControlDetails.categoriesInfo"
-                       template-name="CategoriesButtonsStems"></categories>
+                    template-name="CategoriesButtonsStems"></categories>
 
       </div>
 
-      <a href="#close" ng-click="$event.preventDefault()" data-rel="close" id="closePanelButton"
+      <a href="#close" ng-click="$event.preventDefault()" data-rel="close" id="leftPanelCloseButton"
          class="ui-btn ui-shadow ui-corner-all ui-icon-delete ui-btn-icon-left ui-btn-inline ui-mini">Close panel</a>
 
     </div>
 
-    <!-- <div data-role="panel" id="rightpanel"
+    <div data-role="panel" id="rightpanel"
          data-position="right" data-display="overlay">
-         <rightpanel></rightpanel>
-    </div> -->
+         <right-panel type="right"></right-panel>
+    </div>
 
     <div data-role="header" id="header" class="jqm-header">
       <h1 id="pageHeader">TCM Diagnosis</h1>
@@ -151,7 +151,9 @@
                           attach-categories="true"></showcontols>
 
               <div ng-show="diagnoseController.model.diagnoseDataServiceValues.showAllFieldsMandatoryMessage">
-                <div class="alert alert-warning">All Fields are mandatory</div>
+                <div class="alert alert-warning">
+                  {{diagnoseController.model.diagnoseDataServiceValues.allFieldsMandatoryMessage}}
+                </div>
               </div>
 
               <a href="javascript:;" class="ui-link ui-btn ui-shadow ui-corner-all"
